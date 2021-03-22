@@ -23,24 +23,24 @@ function playerPlay() {
 }
 
 function win(playerSelection, computerSelection){
-    console.log("You Win! " + playerSelection + " beats " + computerSelection);
+    alert("You Win! " + playerSelection + " beats " + computerSelection);
     return 1;
 }
 
 function lose(playerSelection, computerSelection) {
-    console.log("You Lose! " + computerSelection + " beats " + playerSelection);
+    alert("You Lose! " + computerSelection + " beats " + playerSelection);
     return 2;
 }
 
 function tie() {
-    console.log("Tie!")
+    alert("Tie!")
     return 3;
 }
 
 function playRound(playerSelection, computerSelection) {
     if (playerSelection === "rock") {
         if (computerSelection === "rock") {
-            return "Tie";
+            return tie();
         } else if (computerSelection === "paper") {
             return lose(playerSelection, computerSelection);
         } else if (computerSelection === "scissors") {
@@ -51,7 +51,7 @@ function playRound(playerSelection, computerSelection) {
         if (computerSelection === "rock") {
             return win(playerSelection, computerSelection);
         } else if (computerSelection === "paper") {
-            return "Tie!";
+            return tie();
         } else if (computerSelection === "scissors") {
             return lose(playerSelection, computerSelection);
         }
@@ -62,7 +62,7 @@ function playRound(playerSelection, computerSelection) {
         } else if(computerSelection === "paper") {
             return win(playerSelection, computerSelection);
         } else if(computerSelection === "scissors") {
-            return "Tie!";
+            return tie();
         }
     }
     return "Error: " + playerSelection + ", " + computerSelection;
@@ -95,4 +95,4 @@ function game() {
     }
 }
 
-console.log(game());
+alert(game());
